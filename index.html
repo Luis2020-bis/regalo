@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalos Regresados</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #cceeff; /* Celeste claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            transition: background 0.5s ease;
+            text-align: center;
+            color: black;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 20px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0077cc;
+        }
+        .mensaje {
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="boton">Regalo de Egresados</button>
+
+    <audio id="musica" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio en HTML5.
+    </audio>
+
+    <script>
+        document.getElementById("boton").addEventListener("click", function() {
+            document.body.style.background = "url('isla.jpg') no-repeat center center/cover"
+            document.body.innerHTML = `
+                <div class="mensaje">
+                    🎁 Vale para <strong>dos pasajes aereos</strong><br>
+                            y estadía<strong> en Costa Rica</strong> 🏝️
+                </div>
+            `;
+            // Reproducir música
+            const musica = document.getElementById("musica");
+            musica.play().catch(err => console.log("El navegador bloqueó la reproducción automática:", err));
+        });
+    </script>
+</body>
+</html>
